@@ -1,0 +1,218 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #000112;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#top-line {
+  height: 0.6vw;
+}
+
+.container {
+  display: flex;
+  justify-content: right;
+  background-image: url("../image/header2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-header {
+  font-size: 4vw;
+  margin-right: 10vw;
+  font-family: 'Courier New', Courier, monospace;
+  padding-bottom: 2vh;
+  color: red;
+  padding-left: 1vw;
+}
+
+.main-page {
+  height: 90%;
+  padding-top: 1vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  background-image: url("../image/6.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+}
+
+.left-dashboard {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+
+}
+
+.score,
+.speed,
+.startGame,
+.endScreen,
+#howto {
+  text-align: center;
+  color: white;
+  font-size: 2vw;
+  font-family: 'Courier New', Courier, monospace;
+  border: white;
+  font-weight: bolder;
+  padding: 1vw;
+  margin-top: 1vh;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: #961212;
+
+}
+
+#dashboard,
+#dashboard2 {
+  padding: 0px;
+  margin: 0px;
+  width: 12vw;
+}
+
+.gameArea {
+  background-color: #000112;
+  opacity: 0.95;
+  width: 500px;
+  height: 94%;
+  overflow: hidden;
+  position: relative;
+
+}
+
+/*CAR DRIVING GAME STYLE*/
+
+.car {
+  position: absolute;
+  bottom: 100px;
+  margin: auto;
+  width: 70px;
+  height: 140px;
+  line-height: 38px;
+  font-size: 1.7em;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  vertical-align: middle;
+  background-image: url("../image/redcar.png");
+  background-size: cover;
+}
+
+.enemy {
+  position: absolute;
+  bottom: 100px;
+  margin: auto;
+  width: 60px;
+  height: 120px;
+  background-color: red;
+  line-height: 38px;
+  font-size: 1.7em;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  vertical-align: middle;
+  background-image: url("../image/car.png");
+  background-size: cover;
+}
+
+.line {
+  position: absolute;
+  height: 100px;
+  width: 10px;
+  margin-left: 245px;
+  background-color: white;
+}
+
+/*THIS IS FOR MODAL PART*/
+.modal,
+.gameOverM {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000112(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow: auto;
+  display: none;
+
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+.modal-content,
+.gameOverM-content {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 60%;
+  max-height: 75%;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px white;
+  overflow: auto;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.modal-content h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: aliceblue;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.modal-content p {
+  text-align: left;
+  margin-bottom: 2rem;
+  font-size: 120%;
+  color: aliceblue
+}
+
+.top-bar {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.modal-content div,
+.gameOverM div {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 120%;
+}
+
+.modal-close,
+.gomodal-close {
+  margin: 2rem;
+  padding: 2rem;
+  cursor: pointer;
+  font-size: 1em;
+  background-color: black;
+  box-shadow: 0px 0px 20px 10px rgb(2, 140, 246);
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  border-radius: 1rem;
+}
+
+#yes,
+#goyes {
+  margin: 2rem;
+  padding: 2rem;
+  cursor: pointer;
+  font-size: 1em;
+  background-color: black;
+  box-shadow: 0px 0px 20px 10px rgb(2, 140, 246);
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  border-radius: 1rem;
+}
+
+footer{
+  color: white;
+  text-align: center;
+}

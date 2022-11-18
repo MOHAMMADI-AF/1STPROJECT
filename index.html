@@ -1,0 +1,76 @@
+<!--<!DOCTYPE html>-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAR DRIVING</title>
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+  <img id="top-line" src="../image/modtopbar.jpg" alt="top" />
+  <div id="page-header">
+    <div class="container">
+      <h1 class="main-header">DRIVE TO RACE!</h1>
+    </div>
+  </div>
+  <img id="top-line" src="../image/modtopbar.jpg" alt="top" />
+
+  <!--CAR DRIVING GAME ELEMENTS STARTS FROM HERE-->
+
+   <div class="main-page">
+    <section class="left-dashboard">
+
+      <div class="startGame">START</div>
+      <div class="speed"></div>
+      <div id="howto">HELP</div>
+
+    </section>
+    <section class="game">
+      <div class="gameArea"></div>
+    </section>
+    <section class="right-dashboard">
+      <div class="endScreen">END</div>
+      <div class="score"></div>
+
+    </section>
+  </div>
+
+
+
+  <div class="modal">
+    <div class="modal-content">
+      <h1>TO PLAY BETTER, READ ALL THE INSTRUCTIONS</h1>
+      <div class="top-bar"><img src="./image/modtopbar.jpg" alt="modalTopBar"></div>
+      <p>This is a car driving and racing game.<br>To play the game click on (I WILL TRY IT).<br>The cars will start
+        moving at speed of (5) automatically.<br>To move Up, Down, Right & left use the arrow keys on your
+        Keyboard.<br>To increase the speed, use the (F) key on your Keyboard.<br>To decrease the speed, use the (S) key
+        on your Keyboard.<br>Increasing the speed will give you 10 points.<br>Decreasing the speed will deduct 5
+        points.<br>You can quit the game any time by pressing (esc) on your Keyboard, or clicking on (END).<br><br>To
+        exit without playing click on (I DO NOT LIKE IT).</p>
+      <div class="modal-button">
+        <button id="yes">I WILL TRY IT</button>
+        <button class="modal-close">I DO NOT LIKE IT</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="gameOverM">
+    <div class="gameOverM-content">
+      <img src="./image/gameover.webp" alt="GameOver">
+      <div class="modal-button">
+        <button class="gomodal-close">TRY AGAIN</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <hr>
+    <p>&copy; This is ONLY a learning project.<br>
+  </footer>
+</body>
+
+<script src="./js/index.js" defer></script>
+
+</html>
