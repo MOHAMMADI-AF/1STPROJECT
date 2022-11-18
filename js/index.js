@@ -40,7 +40,6 @@ window.addEventListener("keydown", (e) => {
 });
 endScreen.addEventListener("click", (event) => {
   endGame();
-  //location.reload();
   gameOverM.style.display = "flex";
 });
 
@@ -53,6 +52,7 @@ let keys = {
   ArrowRight: false,
   ArrowLeft: false,
 };
+//THIS IS THE EVENT LITSENNER TO INVOC GAME WITH KEY IS PRESSED 
 
 startGame.addEventListener("click", start);
 document.addEventListener("keydown", pressOn);
@@ -61,7 +61,7 @@ document.addEventListener("keyup", pressOff);
 //THIS FUNCTION IS CREATING THE LINE ON THE STREE 
 //===============================================
 
-function moveLines() {
+function moveLines() { //this function is moving the lines and looping them to be regenerated
   let lines = document.querySelectorAll(".line");
   lines.forEach(function (item) {
     if (item.y >= 1500) {
@@ -111,8 +111,9 @@ function playGame() {
   let car = document.querySelector(".car");
   moveLines();
   moveEnemy(car);
-  let road = gameArea.getBoundingClientRect();
-  if (player.start) {
+  let road = gameArea.getBoundingClientRect(); //And what get bounding client rectangle does is it essentially gets the size of an element and its relative position to the viewpoint get bounding rectangle value and that's going to return back the top right
+  console.log(road);
+  if (player.start) { //it takes the player object if the start is true ??
     if (keys.ArrowUp && player.y > road.top) {
       player.y -= player.speed;
     }
@@ -122,14 +123,13 @@ function playGame() {
     if (keys.ArrowLeft && player.x > 0) {
       player.x -= player.speed;
     }
-    if (keys.ArrowRight && player.x < road.width - 50) {
+    if (keys.ArrowRight && player.x < road.width - 50) { //the 50 is the 50 px size of the car and here we are deducting it from the width of the road so the car should not move our of the road 
       //THIS IS FIXING THE CAR POSITION TO THE RIGHT NOT TO MOVE OUT OF THE ROAD
       player.x += player.speed;
     }
-    car.style.left = player.x + "px";
+    car.style.left = player.x + "px"; // the car elment is created now we are taking that car and positioning it to the player X position and same for Y this allows us to more the object using the arrow
     car.style.top = player.y + "px";
-    window.requestAnimationFrame(playGame);
-    //player.score++;
+    window.requestAnimationFrame(playGame); //here the requestAnimationFrame function is invoked and rpeated itself 
     score.innerText = "Score: " + player.score;
     speed.innerText = "speed: " + player.speed;
   }
@@ -160,23 +160,23 @@ function endGame() {
 
 function start() {
   console.log("click"); //COULD BE REMOVED ONLY FOR TESTING
-  startGame.classList.add("hide");
   gameArea.innerHTML = "";
   player.start = true; //THE PLAYER IS CALLED FOR THE PLAYER OBJECT ABOVE (START OF THE GAME CODE)
   player.score = 0;
-  for (let x = 0; x < 10; x++) {
+  for (let x = 0; x < 10; x++) {  //we are creating lines for the road and the line are object created by javascript same as cars and each time it is looping it creats 10 line 
     let div = document.createElement("div");
-    div.classList.add("line");
+    div.classList.add("line"); // this adds the lines and setting the positions 
     div.y = x * 150;
     div.style.top = x * 150 + "px";
-    gameArea.appendChild(div);
+    gameArea.appendChild(div); // here we are appending the lines to the road  same as we did for cars 
+    console.log(div)
   }
-  window.requestAnimationFrame(playGame); //THIS FUNCTION WILL CALL THE PLAY GAME FUNCTION MORE ON MDN Window.requestAnimationFrame()
+  window.requestAnimationFrame(playGame); //THIS FUNCTION WILL CALL THE PLAY GAME FUNCTION MORE ON MDN Window.requestAnimationFrame() this function allows to loop through several time 
   let car = document.createElement("div"); //THIS VARIABLE IS CREATING THE CAR
-  //car.innerText = "Car";
-  car.setAttribute("class", "car");
-  gameArea.appendChild(car);
-  player.x = car.offsetLeft;
+  console.log(car);
+  car.setAttribute("class", "car"); //there is no default class but we can use the call to set attribute for car whick is in css 
+  gameArea.appendChild(car); // add the car to the road area
+  player.x = car.offsetLeft; //this is getting the car POSITION where it is in the gameArea
   player.y = car.offsetTop;
   for (let x = 0; x < 3; x++) {
     let enemy = document.createElement("div");
@@ -229,4 +229,3 @@ gomCloseButton.addEventListener("click", (event) => {
   modal.style.display = "none";
   location.reload();
 });
-
